@@ -9,4 +9,6 @@ api.listen(8001, () => {
   console.log("Escuchando puerto 8001");
 });
 
-
+api.get("/test", (req, res) => {
+  res.send("Hola esta es una prueba...");
+});
