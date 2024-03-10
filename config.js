@@ -7,11 +7,11 @@ const connect = () => {
   mongoose.connect(process.env.DB_URI);
   const connection = mongoose.connection;
 
-  connection.once("open", () => {
+  connection.once('open', () => {
     console.log("Conexion a db exitosa");
   });
 
-  connection.once("error", () => {
+  connection.once('error', () => {
     console.error("Error de conexion a db");
   });
 };
