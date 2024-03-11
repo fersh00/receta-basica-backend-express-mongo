@@ -5,6 +5,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  brand: {
+    type: String,
+    default: 'Great Value',
+  },
   price: Number,
   stock: Number,
   depto: String,

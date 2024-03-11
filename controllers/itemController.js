@@ -15,8 +15,44 @@ const createItem = async (req, res) => {
   res.json(newItem);
 };
 
-//Read
-//Update
-//Delete
+const getAllItems = async (req, res) => {
+  const items = await Item.find();
+  res.json(items);
+};
 
-export { createItem };
+const getItemById = async (req, res) => {
+  const item = await Item.findById(req.params.itemId);
+  res.json(item);
+};
+
+const updateItem = async (req, res) => {
+  const { itemId } = req.params;
+  const updatedItem = await Item.updateOne(
+    {
+      _id: itemId,
+    },
+    req.body
+  );
+  res.json(updatedItem);
+};
+
+const softDeleteItem = async (req, res) => {
+  const deletedItem = await Item.findByIdAndUpdate(
+    req.params.itemId,
+    {
+      isDeleted: true,
+    },
+    {
+      new: true,
+    }
+  );
+  res.json(deletedItem);
+};
+
+const roughDeleteItem = async (req, res) => {
+  const deletedItem = await Item.findByIdAndDelete(req.params.itemId);
+  res.json(deletedItem);
+}
+
+
+export { createItem, getAllItems, getItemById, updateItem, softDeleteItem, roughDeleteItem };
