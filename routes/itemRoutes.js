@@ -14,7 +14,7 @@ itemRoutes.post("/items", createItem);
 itemRoutes.get("/items", getAllItems);
 itemRoutes.get("/items/:itemId", getItemById);
 itemRoutes.put("/items/:itemId", updateItem);
-itemRoutes.put("/item/:itemId", softDeleteItem);
-itemRoutes.delete("/item/:itemId", roughDeleteItem);
+itemRoutes.put("/items/:itemId", softDeleteItem);
+itemRoutes.delete("/items/:itemId", roughDeleteItem);
 
 export { itemRoutes };

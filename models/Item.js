@@ -13,6 +13,10 @@ const itemSchema = new mongoose.Schema({
   stock: Number,
   depto: String,
   description: String,
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 export default mongoose.model("Item", itemSchema);

@@ -52,7 +52,13 @@ const softDeleteItem = async (req, res) => {
 const roughDeleteItem = async (req, res) => {
   const deletedItem = await Item.findByIdAndDelete(req.params.itemId);
   res.json(deletedItem);
-}
+};
 
-
-export { createItem, getAllItems, getItemById, updateItem, softDeleteItem, roughDeleteItem };
+export {
+  createItem,
+  getAllItems,
+  getItemById,
+  updateItem,
+  softDeleteItem,
+  roughDeleteItem,
+};
